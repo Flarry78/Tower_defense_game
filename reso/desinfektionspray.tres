@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="reskarten" format=3 uid="uid://cw3nklndgrlii"]
+
+[ext_resource type="Texture2D" uid="uid://grmcjwnkqi4d" path="res://assets/desinade.png" id="1_rmi45"]
+[ext_resource type="Script" uid="uid://c35b2tpvsipwr" path="res://kartenres.gd" id="2_scubf"]
+
+[resource]
+script = ExtResource("2_scubf")
+kartenname = "Desinfektionspray"
+kartenbild = ExtResource("1_rmi45")
+kartentext = "Desinfektionsspray das eine ausbreitende Wolke erzeugt die Gegnern schaden zufügt."
+kartentyp = "Ability"
+metadata/_custom_type_script = "uid://c35b2tpvsipwr"

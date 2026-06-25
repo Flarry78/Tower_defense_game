@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cgndtckw45dei"]
+
+[ext_resource type="Script" uid="uid://bevtccb7nbei" path="res://ability/artillery.gd" id="1_36b13"]
+[ext_resource type="Texture2D" uid="uid://b84hdjfj3siw1" path="res://assets/visier.png" id="2_bq6qr"]
+
+[node name="artillery" type="Node2D" unique_id=136289867]
+script = ExtResource("1_36b13")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=206709678]
+modulate = Color(1, 1, 1, 0.39215687)
+scale = Vector2(2, 2)
+texture = ExtResource("2_bq6qr")
+
+[node name="reload" type="Timer" parent="." unique_id=1173843024]
+
+[connection signal="timeout" from="reload" to="." method="_on_reload_timeout"]

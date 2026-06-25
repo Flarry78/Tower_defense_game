@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="reskarten" format=3 uid="uid://b527fhxqwxlef"]
+
+[ext_resource type="Texture2D" uid="uid://dwmrfiln22xoy" path="res://assets/shotgunlaserbild.png" id="1_wq0oe"]
+[ext_resource type="Script" uid="uid://c35b2tpvsipwr" path="res://kartenres.gd" id="2_h5su7"]
+
+[resource]
+script = ExtResource("2_h5su7")
+kartenname = "Lasershotgun"
+kartenbild = ExtResource("1_wq0oe")
+kartentext = "Schießt 4 Laser in 4 Richtungen"
+kartentyp = "Turm"
+toweranzahl = 3
+metadata/_custom_type_script = "uid://c35b2tpvsipwr"

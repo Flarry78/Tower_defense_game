@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dk7yk8p54th7j"]
+
+[ext_resource type="Script" uid="uid://n2ox7cr1aq7l" path="res://geschosse/laserschuss.gd" id="1_o3rq5"]
+[ext_resource type="Texture2D" uid="uid://cl0uionqjd1o3" path="res://assets/shotgunlaserschuss.png" id="1_rkplw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_o3rq5"]
+radius = 3.6055512
+
+[node name="laserschuss" type="Area2D" unique_id=922228500]
+collision_layer = 8
+collision_mask = 4
+monitorable = false
+script = ExtResource("1_o3rq5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1425601491]
+shape = SubResource("CircleShape2D_o3rq5")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1281758169]
+texture = ExtResource("1_rkplw")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=618440398]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

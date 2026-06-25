@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://pnfw0svvbjmo"]
+
+[ext_resource type="Script" uid="uid://cey81yuqabdm3" path="res://geschosse/bullet.gd" id="1_728a6"]
+[ext_resource type="Texture2D" uid="uid://5qg3xucspw0l" path="res://assets/bulletone.png" id="1_i0yt6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_728a6"]
+radius = 4.0
+
+[node name="bullet" type="Area2D" unique_id=1630050300]
+collision_layer = 8
+collision_mask = 4
+monitorable = false
+script = ExtResource("1_728a6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1175724666]
+shape = SubResource("CircleShape2D_728a6")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=88187973]
+texture = ExtResource("1_i0yt6")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=757175019]
+rect = Rect2(-5, -5, 10, 11)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

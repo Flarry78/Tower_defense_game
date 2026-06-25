@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://c7oe3rsitagn5"]
+
+[ext_resource type="Script" uid="uid://brnn8j6uv7fl6" path="res://enemys/enemytwo.gd" id="1_s677a"]
+[ext_resource type="Texture2D" uid="uid://davroowssdusr" path="res://assets/gegner2.png" id="1_wecb0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s677a"]
+radius = 12.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s677a"]
+bg_color = Color(0.95826703, 0, 0.14570671, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pvlu4"]
+bg_color = Color(0, 0.75339586, 0.10112322, 1)
+
+[node name="enemytwo" type="Node2D" unique_id=580820715]
+script = ExtResource("1_s677a")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=199257984]
+texture = ExtResource("1_wecb0")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=785550330]
+collision_layer = 4
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1760775270]
+shape = SubResource("CircleShape2D_s677a")
+
+[node name="lifebar" type="Control" parent="." unique_id=1418530508]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+grow_horizontal = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="lifebar" unique_id=198036974]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -16.0
+offset_top = 17.0
+offset_right = 16.0
+offset_bottom = 20.0
+grow_horizontal = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_s677a")
+theme_override_styles/fill = SubResource("StyleBoxFlat_pvlu4")
+show_percentage = false

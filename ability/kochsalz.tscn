@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://da4ha18qmsldf"]
+
+[ext_resource type="Script" uid="uid://cygesxbhmldnd" path="res://ability/kochsalz.gd" id="1_2n10l"]
+[ext_resource type="Texture2D" uid="uid://caabx7naqp18q" path="res://assets/kochsalz.png" id="1_t8vs7"]
+
+[node name="kochsalz" type="Node2D" unique_id=1824229154]
+script = ExtResource("1_2n10l")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1987851450]
+modulate = Color(1, 1, 1, 0.39215687)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_t8vs7")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=930295776]
+collision_layer = 16
+collision_mask = 4
+monitorable = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=311859126]
+polygon = PackedVector2Array(-39, 31, -39, 17, -48, 6, -48, 0, -39, -11, -39, -18, -41, -28, -25, -40, -12, -46, -3, -46, 3, -38, 9, -38, 25, -47, 37, -48, 42, -43, 32, -32, 48, -19, 48, -12, 42, -3, 48, 11, 47, 24, 35, 32, 34, 39, 30, 45, 20, 44, 14, 44, 8, 48, -4, 47, -19, 46, -26, 36, -30, 34, -36, 34)
+
+[node name="reload" type="Timer" parent="." unique_id=1744043835]
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

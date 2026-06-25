@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="reskarten" format=3 uid="uid://c4gq8p3krfljt"]
+
+[ext_resource type="Texture2D" uid="uid://bjbf6iexhleyf" path="res://assets/artillerybild.png" id="1_o3xjm"]
+[ext_resource type="Script" uid="uid://c35b2tpvsipwr" path="res://kartenres.gd" id="2_f8ga8"]
+
+[resource]
+script = ExtResource("2_f8ga8")
+kartenname = "Artillery"
+kartenbild = ExtResource("1_o3xjm")
+kartentext = "Artilleryfeuer das in einem Bereich zufällig schaden austeilt."
+kartentyp = "Ability"
+metadata/_custom_type_script = "uid://c35b2tpvsipwr"

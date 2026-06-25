@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cnh5yua8ff0tu"]
+
+[ext_resource type="Script" uid="uid://cphqvlb7onkny" path="res://tower/sniperauge.gd" id="1_sw4c8"]
+[ext_resource type="Texture2D" uid="uid://bx5wwr4nninh8" path="res://assets/sniperauge.png" id="2_xr3u6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xr3u6"]
+radius = 239.0753
+
+[node name="sniperauge" type="Node2D" unique_id=1945748389]
+script = ExtResource("1_sw4c8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1635341204]
+texture = ExtResource("2_xr3u6")
+
+[node name="spotting" type="Area2D" parent="." unique_id=1507635180]
+collision_layer = 2
+collision_mask = 4
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spotting" unique_id=278657465]
+shape = SubResource("CircleShape2D_xr3u6")
+
+[node name="reload" type="Timer" parent="." unique_id=20304182]
+
+[connection signal="area_entered" from="spotting" to="." method="_on_spotting_area_entered"]
+[connection signal="area_exited" from="spotting" to="." method="_on_spotting_area_exited"]
+[connection signal="timeout" from="reload" to="." method="_on_reload_timeout"]

@@ -1,0 +1,864 @@
+[gd_scene format=3 uid="uid://ck0r4nlwbfx46"]
+
+[ext_resource type="Script" uid="uid://b03gwjbhbb8vp" path="res://interface/hud.gd" id="1_qnvtr"]
+[ext_resource type="Script" uid="uid://hott3dkrgvtq" path="res://interface/karteone.gd" id="2_dc3ex"]
+[ext_resource type="Texture2D" uid="uid://c80tjckklbmd4" path="res://assets/kreuz.png" id="2_j5tbm"]
+[ext_resource type="Texture2D" uid="uid://b6txia1t2ffj2" path="res://assets/fleischschuss.png" id="3_q6srq"]
+[ext_resource type="Script" uid="uid://cy1v70yrp8c6n" path="res://interface/karteone_2.gd" id="4_kmmob"]
+[ext_resource type="Script" uid="uid://dmcg1ymyre2mj" path="res://interface/karteone_3.gd" id="5_84ykg"]
+[ext_resource type="Script" uid="uid://nd48470ssdy8" path="res://interface/karteone_4.gd" id="6_w8ipo"]
+[ext_resource type="Script" uid="uid://dp2g2x5jrvn8a" path="res://interface/abilityone.gd" id="8_yj6nv"]
+[ext_resource type="Script" uid="uid://dt2t8rgiq8nl3" path="res://interface/abilitytwo.gd" id="9_wt8rj"]
+[ext_resource type="Script" uid="uid://c5kt47caie577" path="res://interface/slot.gd" id="10_wt8rj"]
+
+[node name="hud" type="CanvasLayer" unique_id=943334640]
+process_mode = 3
+script = ExtResource("1_qnvtr")
+
+[node name="gamefenster" type="Control" parent="." unique_id=1371638013]
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 0.88900006
+offset_bottom = -0.040008545
+
+[node name="ColorRect" type="ColorRect" parent="gamefenster" unique_id=102118388]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.15127608, 0.15127608, 0.15127608, 1)
+
+[node name="escapemenu" type="Control" parent="gamefenster" unique_id=1342071738]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = -100.00001
+offset_right = 90.0
+offset_bottom = 100.00001
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="gamefenster/escapemenu" unique_id=867483351]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.68235296, 0.6862745, 1)
+
+[node name="pausemenu" type="VBoxContainer" parent="gamefenster/escapemenu" unique_id=1211454084]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="resume" type="Button" parent="gamefenster/escapemenu/pausemenu" unique_id=562141210]
+layout_mode = 2
+size_flags_vertical = 3
+text = "RESUME"
+
+[node name="restartcurrent" type="Button" parent="gamefenster/escapemenu/pausemenu" unique_id=425567695]
+layout_mode = 2
+size_flags_vertical = 3
+text = "RESTART"
+
+[node name="newlevel" type="Button" parent="gamefenster/escapemenu/pausemenu" unique_id=746249015]
+layout_mode = 2
+size_flags_vertical = 3
+text = "NEW MAP"
+
+[node name="speichern" type="Button" parent="gamefenster/escapemenu/pausemenu" unique_id=1759458096]
+layout_mode = 2
+size_flags_vertical = 3
+text = "SAFE"
+
+[node name="exit" type="Button" parent="gamefenster/escapemenu/pausemenu" unique_id=1922826072]
+layout_mode = 2
+size_flags_vertical = 3
+text = "EXIT"
+
+[node name="losescreen" type="Control" parent="gamefenster" unique_id=1938768380]
+layout_mode = 1
+anchor_left = 0.344
+anchor_top = 0.187
+anchor_right = 0.656
+anchor_bottom = 0.81200004
+offset_left = -0.16000366
+offset_top = 0.1599884
+offset_right = 0.15997314
+offset_bottom = 0.15997314
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="gamefenster/losescreen" unique_id=1699072365]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.68235296, 0.6862745, 1)
+
+[node name="punktzahlschrift" type="Label" parent="gamefenster/losescreen" unique_id=285453618]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.060000002
+anchor_right = 0.94000006
+anchor_bottom = 0.21000001
+offset_left = 68.0
+offset_right = -68.000015
+offset_bottom = -19.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 30
+text = "PUNKTZAHL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="finalpunkte" type="Label" parent="gamefenster/losescreen" unique_id=1275067489]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.13000001
+anchor_top = 0.18
+anchor_right = 0.85
+anchor_bottom = 0.32500002
+offset_left = -1.0000019
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 24
+text = "999999999"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="gamefenster/losescreen" unique_id=239991043]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.4
+anchor_right = 0.97
+anchor_bottom = 0.96500003
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="restartthismap" type="Button" parent="gamefenster/losescreen/VBoxContainer" unique_id=1541223261]
+layout_mode = 2
+size_flags_vertical = 3
+text = "RESTART"
+
+[node name="restartnew" type="Button" parent="gamefenster/losescreen/VBoxContainer" unique_id=475023758]
+layout_mode = 2
+size_flags_vertical = 3
+text = "NEW MAP"
+
+[node name="exitbutton" type="Button" parent="gamefenster/losescreen/VBoxContainer" unique_id=232670725]
+layout_mode = 2
+size_flags_vertical = 3
+text = "EXIT"
+
+[node name="karten" type="Control" parent="gamefenster" unique_id=939077303]
+layout_mode = 1
+anchor_left = 0.2
+anchor_top = 0.15
+anchor_right = 0.8
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="kartcontainer" type="HBoxContainer" parent="gamefenster/karten" unique_id=1935873951]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="karteone" type="Control" parent="gamefenster/karten/kartcontainer" unique_id=1955614805]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("2_dc3ex")
+
+[node name="ColorRect" type="ColorRect" parent="gamefenster/karten/kartcontainer/karteone" unique_id=1319318997]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.1281803, 0.32412007, 0.32653496, 1)
+
+[node name="konebild" type="TextureRect" parent="gamefenster/karten/kartcontainer/karteone" unique_id=1976179506]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.15
+anchor_top = 0.025
+anchor_right = 0.85
+anchor_bottom = 0.25
+grow_horizontal = 2
+texture = ExtResource("2_j5tbm")
+
+[node name="konetext" type="RichTextLabel" parent="gamefenster/karten/kartcontainer/karteone" unique_id=1255744017]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.3
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 8
+
+[node name="Buttonone" type="Button" parent="gamefenster/karten/kartcontainer/karteone" unique_id=1605661919]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.9
+anchor_right = 0.8
+anchor_bottom = 0.98
+offset_top = -0.19999695
+offset_right = 0.59999084
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 6
+text = "TAKE"
+
+[node name="karteone2" type="Control" parent="gamefenster/karten/kartcontainer" unique_id=1970750879]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("4_kmmob")
+
+[node name="ColorRect" type="ColorRect" parent="gamefenster/karten/kartcontainer/karteone2" unique_id=1694355792]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.1281803, 0.32412007, 0.32653496, 1)
+
+[node name="ktwobild" type="TextureRect" parent="gamefenster/karten/kartcontainer/karteone2" unique_id=1903820987]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.15
+anchor_top = 0.025
+anchor_right = 0.85
+anchor_bottom = 0.25
+grow_horizontal = 2
+texture = ExtResource("2_j5tbm")
+
+[node name="ktwotext" type="RichTextLabel" parent="gamefenster/karten/kartcontainer/karteone2" unique_id=1102965465]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.3
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 8
+
+[node name="Buttontwo" type="Button" parent="gamefenster/karten/kartcontainer/karteone2" unique_id=127476799]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.9
+anchor_right = 0.8
+anchor_bottom = 0.98
+offset_top = -0.19999695
+offset_right = 0.59999084
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 6
+text = "TAKE"
+
+[node name="karteone3" type="Control" parent="gamefenster/karten/kartcontainer" unique_id=728916724]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("5_84ykg")
+
+[node name="ColorRect" type="ColorRect" parent="gamefenster/karten/kartcontainer/karteone3" unique_id=1931873419]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.1281803, 0.32412007, 0.32653496, 1)
+
+[node name="kthreebild" type="TextureRect" parent="gamefenster/karten/kartcontainer/karteone3" unique_id=276201572]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.15
+anchor_top = 0.025
+anchor_right = 0.85
+anchor_bottom = 0.25
+grow_horizontal = 2
+texture = ExtResource("2_j5tbm")
+
+[node name="kthreetext" type="RichTextLabel" parent="gamefenster/karten/kartcontainer/karteone3" unique_id=490053282]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.3
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 8
+
+[node name="Buttonthree" type="Button" parent="gamefenster/karten/kartcontainer/karteone3" unique_id=1389086924]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.9
+anchor_right = 0.8
+anchor_bottom = 0.98
+offset_top = -0.19999695
+offset_right = 0.59999084
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 6
+text = "TAKE"
+
+[node name="karteone4" type="Control" parent="gamefenster/karten/kartcontainer" unique_id=963324846]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("6_w8ipo")
+
+[node name="ColorRect" type="ColorRect" parent="gamefenster/karten/kartcontainer/karteone4" unique_id=1295359881]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.1281803, 0.32412007, 0.32653496, 1)
+
+[node name="kfourbild" type="TextureRect" parent="gamefenster/karten/kartcontainer/karteone4" unique_id=1481656277]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.15
+anchor_top = 0.025
+anchor_right = 0.85
+anchor_bottom = 0.25
+grow_horizontal = 2
+texture = ExtResource("2_j5tbm")
+
+[node name="kfourtext" type="RichTextLabel" parent="gamefenster/karten/kartcontainer/karteone4" unique_id=965043723]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.3
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 8
+
+[node name="Buttonfour" type="Button" parent="gamefenster/karten/kartcontainer/karteone4" unique_id=511682206]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.9
+anchor_right = 0.8
+anchor_bottom = 0.98
+offset_top = -0.19999695
+offset_right = 0.59999084
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 6
+text = "TAKE"
+
+[node name="hudbar" type="Control" parent="." unique_id=1501662451]
+layout_mode = 3
+anchor_top = 0.88900006
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -0.040008545
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="hudbar" unique_id=384692195]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.68303233, 0.68629485, 1)
+
+[node name="startrundebutton" type="Button" parent="hudbar" unique_id=1420178639]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.92200005
+anchor_top = 0.05
+anchor_right = 0.994
+anchor_bottom = 0.95800006
+offset_left = -0.08001709
+offset_top = -1.335144e-05
+offset_right = -0.16003418
+offset_bottom = 0.009983063
+text = "Start"
+
+[node name="lebenanzeige" type="Label" parent="hudbar" unique_id=476515738]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.81900007
+anchor_top = 0.05
+anchor_right = 0.9110001
+anchor_bottom = 0.47500002
+offset_left = -0.16003418
+offset_right = -0.040039063
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 12
+text = "Leben : 33"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="hudbar/lebenanzeige" unique_id=587709587]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.28800002
+anchor_right = -0.017
+anchor_bottom = 0.94100004
+offset_left = -0.00799942
+offset_right = 0.003000021
+offset_bottom = 0.0029993057
+texture = ExtResource("2_j5tbm")
+
+[node name="rundenanzeige" type="Label" parent="hudbar" unique_id=188547512]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.81900007
+anchor_top = 0.5
+anchor_right = 0.91600007
+anchor_bottom = 0.9250001
+offset_left = -0.16003418
+offset_right = -0.24005127
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 12
+text = "Runde : 22"
+
+[node name="TextureRect" type="TextureRect" parent="hudbar/rundenanzeige" unique_id=1810688162]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.27400002
+anchor_right = -0.016
+anchor_bottom = 0.94100004
+offset_left = -0.01199913
+offset_right = -0.007999957
+offset_bottom = 0.0029993057
+texture = ExtResource("3_q6srq")
+
+[node name="abilityslots" type="Control" parent="hudbar" unique_id=1696502188]
+layout_mode = 1
+anchor_left = 0.43600002
+anchor_top = 0.05
+anchor_right = 0.564
+anchor_bottom = 0.95000005
+offset_left = -0.040008545
+offset_right = 0.039978027
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="hudbar/abilityslots" unique_id=952646516]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="abilityone" type="TextureButton" parent="hudbar/abilityslots/HBoxContainer" unique_id=1836220203]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("2_j5tbm")
+stretch_mode = 0
+script = ExtResource("8_yj6nv")
+
+[node name="Label" type="Label" parent="hudbar/abilityslots/HBoxContainer/abilityone" unique_id=645926539]
+layout_mode = 1
+offset_right = 7.0
+offset_bottom = 12.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 8
+text = "Q"
+
+[node name="abilitytwo" type="TextureButton" parent="hudbar/abilityslots/HBoxContainer" unique_id=2100462843]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("2_j5tbm")
+stretch_mode = 0
+script = ExtResource("9_wt8rj")
+
+[node name="Label" type="Label" parent="hudbar/abilityslots/HBoxContainer/abilitytwo" unique_id=1595677830]
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 8
+text = "E"
+
+[node name="kartenbutton" type="Button" parent="hudbar" unique_id=1387677801]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.45000002
+anchor_top = -0.975
+anchor_right = 0.545
+anchor_bottom = -0.2
+offset_right = 0.19998169
+grow_horizontal = 2
+text = "Karten"
+
+[node name="towerbar" type="Control" parent="hudbar" unique_id=506670563]
+layout_mode = 1
+anchor_left = 0.027
+anchor_top = 0.05
+anchor_right = 0.333
+anchor_bottom = 0.95000005
+offset_left = -0.2800007
+offset_right = -0.11999512
+
+[node name="towergrid" type="GridContainer" parent="hudbar/towerbar" unique_id=1056728194]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 10
+
+[node name="slot" type="TextureButton" parent="hudbar/towerbar/towergrid" unique_id=1239653950]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture_normal = ExtResource("2_j5tbm")
+script = ExtResource("10_wt8rj")
+
+[node name="anzahl" type="Label" parent="hudbar/towerbar/towergrid/slot" unique_id=2103601022]
+layout_mode = 1
+offset_right = 5.0
+offset_bottom = 12.0
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 8
+text = "7"
+
+[node name="slot2" type="TextureButton" parent="hudbar/towerbar/towergrid" unique_id=1029046005]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture_normal = ExtResource("2_j5tbm")
+script = ExtResource("10_wt8rj")
+
+[node name="anzahl" type="Label" parent="hudbar/towerbar/towergrid/slot2" unique_id=1500510785]
+layout_mode = 0
+offset_right = 5.0
+offset_bottom = 12.0
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 8
+text = "7"
+
+[node name="slot3" type="TextureButton" parent="hudbar/towerbar/towergrid" unique_id=1146295617]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture_normal = ExtResource("2_j5tbm")
+script = ExtResource("10_wt8rj")
+
+[node name="anzahl" type="Label" parent="hudbar/towerbar/towergrid/slot3" unique_id=1441800780]
+layout_mode = 0
+offset_right = 5.0
+offset_bottom = 12.0
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 8
+text = "7"
+
+[node name="slot4" type="TextureButton" parent="hudbar/towerbar/towergrid" unique_id=302093761]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture_normal = ExtResource("2_j5tbm")
+script = ExtResource("10_wt8rj")
+
+[node name="anzahl" type="Label" parent="hudbar/towerbar/towergrid/slot4" unique_id=1297431883]
+layout_mode = 0
+offset_right = 5.0
+offset_bottom = 12.0
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 8
+text = "7"
+
+[node name="slot5" type="TextureButton" parent="hudbar/towerbar/towergrid" unique_id=947761396]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture_normal = ExtResource("2_j5tbm")
+script = ExtResource("10_wt8rj")
+
+[node name="anzahl" type="Label" parent="hudbar/towerbar/towergrid/slot5" unique_id=2073122829]
+layout_mode = 0
+offset_right = 5.0
+offset_bottom = 12.0
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 8
+text = "7"
+
+[node name="slot6" type="TextureButton" parent="hudbar/towerbar/towergrid" unique_id=1553770063]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture_normal = ExtResource("2_j5tbm")
+script = ExtResource("10_wt8rj")
+
+[node name="anzahl" type="Label" parent="hudbar/towerbar/towergrid/slot6" unique_id=510532642]
+layout_mode = 0
+offset_right = 5.0
+offset_bottom = 12.0
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 8
+text = "7"
+
+[node name="slot7" type="TextureButton" parent="hudbar/towerbar/towergrid" unique_id=1231343130]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture_normal = ExtResource("2_j5tbm")
+script = ExtResource("10_wt8rj")
+
+[node name="anzahl" type="Label" parent="hudbar/towerbar/towergrid/slot7" unique_id=1273089941]
+layout_mode = 0
+offset_right = 5.0
+offset_bottom = 12.0
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 8
+text = "7"
+
+[node name="slot8" type="TextureButton" parent="hudbar/towerbar/towergrid" unique_id=1503204682]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture_normal = ExtResource("2_j5tbm")
+script = ExtResource("10_wt8rj")
+
+[node name="anzahl" type="Label" parent="hudbar/towerbar/towergrid/slot8" unique_id=470996894]
+layout_mode = 0
+offset_right = 5.0
+offset_bottom = 12.0
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 8
+text = "7"
+
+[node name="slot9" type="TextureButton" parent="hudbar/towerbar/towergrid" unique_id=1866999431]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture_normal = ExtResource("2_j5tbm")
+script = ExtResource("10_wt8rj")
+
+[node name="anzahl" type="Label" parent="hudbar/towerbar/towergrid/slot9" unique_id=1175274567]
+layout_mode = 0
+offset_right = 5.0
+offset_bottom = 12.0
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 8
+text = "7"
+
+[node name="slot10" type="TextureButton" parent="hudbar/towerbar/towergrid" unique_id=1009624081]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture_normal = ExtResource("2_j5tbm")
+script = ExtResource("10_wt8rj")
+
+[node name="anzahl" type="Label" parent="hudbar/towerbar/towergrid/slot10" unique_id=900815330]
+layout_mode = 0
+offset_right = 5.0
+offset_bottom = 12.0
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 8
+text = "7"
+
+[node name="slot11" type="TextureButton" parent="hudbar/towerbar/towergrid" unique_id=401702882]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture_normal = ExtResource("2_j5tbm")
+script = ExtResource("10_wt8rj")
+
+[node name="anzahl" type="Label" parent="hudbar/towerbar/towergrid/slot11" unique_id=1742479536]
+layout_mode = 0
+offset_right = 5.0
+offset_bottom = 12.0
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 8
+text = "7"
+
+[node name="slot12" type="TextureButton" parent="hudbar/towerbar/towergrid" unique_id=207299193]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture_normal = ExtResource("2_j5tbm")
+script = ExtResource("10_wt8rj")
+
+[node name="anzahl" type="Label" parent="hudbar/towerbar/towergrid/slot12" unique_id=67320279]
+layout_mode = 0
+offset_right = 5.0
+offset_bottom = 12.0
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 8
+text = "7"
+
+[node name="slot13" type="TextureButton" parent="hudbar/towerbar/towergrid" unique_id=1530931867]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture_normal = ExtResource("2_j5tbm")
+script = ExtResource("10_wt8rj")
+
+[node name="anzahl" type="Label" parent="hudbar/towerbar/towergrid/slot13" unique_id=1041456416]
+layout_mode = 0
+offset_right = 5.0
+offset_bottom = 12.0
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 8
+text = "7"
+
+[node name="slot14" type="TextureButton" parent="hudbar/towerbar/towergrid" unique_id=1081294328]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture_normal = ExtResource("2_j5tbm")
+script = ExtResource("10_wt8rj")
+
+[node name="anzahl" type="Label" parent="hudbar/towerbar/towergrid/slot14" unique_id=658747914]
+layout_mode = 0
+offset_right = 5.0
+offset_bottom = 12.0
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 8
+text = "7"
+
+[node name="slot15" type="TextureButton" parent="hudbar/towerbar/towergrid" unique_id=1679592423]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture_normal = ExtResource("2_j5tbm")
+script = ExtResource("10_wt8rj")
+
+[node name="anzahl" type="Label" parent="hudbar/towerbar/towergrid/slot15" unique_id=940531887]
+layout_mode = 0
+offset_right = 5.0
+offset_bottom = 12.0
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 8
+text = "7"
+
+[node name="slot16" type="TextureButton" parent="hudbar/towerbar/towergrid" unique_id=1801114363]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture_normal = ExtResource("2_j5tbm")
+script = ExtResource("10_wt8rj")
+
+[node name="anzahl" type="Label" parent="hudbar/towerbar/towergrid/slot16" unique_id=949719107]
+layout_mode = 0
+offset_right = 5.0
+offset_bottom = 12.0
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 8
+text = "7"
+
+[node name="slot17" type="TextureButton" parent="hudbar/towerbar/towergrid" unique_id=1627128571]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture_normal = ExtResource("2_j5tbm")
+script = ExtResource("10_wt8rj")
+
+[node name="anzahl" type="Label" parent="hudbar/towerbar/towergrid/slot17" unique_id=192058390]
+layout_mode = 0
+offset_right = 5.0
+offset_bottom = 12.0
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 8
+text = "7"
+
+[node name="slot18" type="TextureButton" parent="hudbar/towerbar/towergrid" unique_id=1785531723]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture_normal = ExtResource("2_j5tbm")
+script = ExtResource("10_wt8rj")
+
+[node name="anzahl" type="Label" parent="hudbar/towerbar/towergrid/slot18" unique_id=1381348910]
+layout_mode = 0
+offset_right = 5.0
+offset_bottom = 12.0
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 8
+text = "7"
+
+[node name="slot19" type="TextureButton" parent="hudbar/towerbar/towergrid" unique_id=1737356484]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture_normal = ExtResource("2_j5tbm")
+script = ExtResource("10_wt8rj")
+
+[node name="anzahl" type="Label" parent="hudbar/towerbar/towergrid/slot19" unique_id=2097332353]
+layout_mode = 0
+offset_right = 5.0
+offset_bottom = 12.0
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 8
+text = "7"
+
+[node name="slot20" type="TextureButton" parent="hudbar/towerbar/towergrid" unique_id=884731557]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture_normal = ExtResource("2_j5tbm")
+script = ExtResource("10_wt8rj")
+
+[node name="anzahl" type="Label" parent="hudbar/towerbar/towergrid/slot20" unique_id=416244784]
+layout_mode = 0
+offset_right = 5.0
+offset_bottom = 12.0
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 8
+text = "7"
+
+[connection signal="pressed" from="gamefenster/escapemenu/pausemenu/resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="gamefenster/escapemenu/pausemenu/restartcurrent" to="." method="_on_restartcurrent_pressed"]
+[connection signal="pressed" from="gamefenster/escapemenu/pausemenu/newlevel" to="." method="_on_newlevel_pressed"]
+[connection signal="pressed" from="gamefenster/escapemenu/pausemenu/exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="gamefenster/losescreen/VBoxContainer/restartthismap" to="." method="_on_restartthismap_pressed"]
+[connection signal="pressed" from="gamefenster/losescreen/VBoxContainer/restartnew" to="." method="_on_restartnew_pressed"]
+[connection signal="pressed" from="gamefenster/losescreen/VBoxContainer/exitbutton" to="." method="_on_exitbutton_pressed"]
+[connection signal="pressed" from="gamefenster/karten/kartcontainer/karteone/Buttonone" to="." method="_on_buttonone_pressed"]
+[connection signal="pressed" from="gamefenster/karten/kartcontainer/karteone2/Buttontwo" to="." method="_on_buttontwo_pressed"]
+[connection signal="pressed" from="gamefenster/karten/kartcontainer/karteone3/Buttonthree" to="." method="_on_buttonthree_pressed"]
+[connection signal="pressed" from="gamefenster/karten/kartcontainer/karteone4/Buttonfour" to="." method="_on_buttonfour_pressed"]
+[connection signal="pressed" from="hudbar/startrundebutton" to="." method="_on_startrundebutton_pressed"]
+[connection signal="pressed" from="hudbar/kartenbutton" to="." method="_on_kartenbutton_pressed"]
+[connection signal="pressed" from="hudbar/towerbar/towergrid/slot" to="hudbar/towerbar/towergrid/slot" method="_on_pressed"]
+[connection signal="pressed" from="hudbar/towerbar/towergrid/slot2" to="hudbar/towerbar/towergrid/slot2" method="_on_pressed"]
+[connection signal="pressed" from="hudbar/towerbar/towergrid/slot3" to="hudbar/towerbar/towergrid/slot3" method="_on_pressed"]
+[connection signal="pressed" from="hudbar/towerbar/towergrid/slot4" to="hudbar/towerbar/towergrid/slot4" method="_on_pressed"]
+[connection signal="pressed" from="hudbar/towerbar/towergrid/slot5" to="hudbar/towerbar/towergrid/slot5" method="_on_pressed"]
+[connection signal="pressed" from="hudbar/towerbar/towergrid/slot6" to="hudbar/towerbar/towergrid/slot6" method="_on_pressed"]
+[connection signal="pressed" from="hudbar/towerbar/towergrid/slot7" to="hudbar/towerbar/towergrid/slot7" method="_on_pressed"]
+[connection signal="pressed" from="hudbar/towerbar/towergrid/slot8" to="hudbar/towerbar/towergrid/slot8" method="_on_pressed"]
+[connection signal="pressed" from="hudbar/towerbar/towergrid/slot9" to="hudbar/towerbar/towergrid/slot9" method="_on_pressed"]
+[connection signal="pressed" from="hudbar/towerbar/towergrid/slot10" to="hudbar/towerbar/towergrid/slot10" method="_on_pressed"]
+[connection signal="pressed" from="hudbar/towerbar/towergrid/slot11" to="hudbar/towerbar/towergrid/slot11" method="_on_pressed"]
+[connection signal="pressed" from="hudbar/towerbar/towergrid/slot12" to="hudbar/towerbar/towergrid/slot12" method="_on_pressed"]
+[connection signal="pressed" from="hudbar/towerbar/towergrid/slot13" to="hudbar/towerbar/towergrid/slot13" method="_on_pressed"]
+[connection signal="pressed" from="hudbar/towerbar/towergrid/slot14" to="hudbar/towerbar/towergrid/slot14" method="_on_pressed"]
+[connection signal="pressed" from="hudbar/towerbar/towergrid/slot15" to="hudbar/towerbar/towergrid/slot15" method="_on_pressed"]
+[connection signal="pressed" from="hudbar/towerbar/towergrid/slot16" to="hudbar/towerbar/towergrid/slot16" method="_on_pressed"]
+[connection signal="pressed" from="hudbar/towerbar/towergrid/slot17" to="hudbar/towerbar/towergrid/slot17" method="_on_pressed"]
+[connection signal="pressed" from="hudbar/towerbar/towergrid/slot18" to="hudbar/towerbar/towergrid/slot18" method="_on_pressed"]
+[connection signal="pressed" from="hudbar/towerbar/towergrid/slot19" to="hudbar/towerbar/towergrid/slot19" method="_on_pressed"]
+[connection signal="pressed" from="hudbar/towerbar/towergrid/slot20" to="hudbar/towerbar/towergrid/slot20" method="_on_pressed"]

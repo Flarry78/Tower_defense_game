@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://420dn8c73emd"]
+
+[ext_resource type="Texture2D" uid="uid://btjsd4pbr164r" path="res://assets/bacteria.png" id="1_v2s6r"]
+[ext_resource type="Script" uid="uid://c1b5q6785cfw3" path="res://enemys/enemyone.gd" id="1_vy4v8"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vy4v8"]
+radius = 8.0
+height = 22.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vy4v8"]
+bg_color = Color(0.95826703, 0, 0.14570671, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wly3r"]
+bg_color = Color(0, 0.75339586, 0.10112322, 1)
+
+[node name="enemyone" type="Node2D" unique_id=911921385]
+script = ExtResource("1_vy4v8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1234478310]
+texture = ExtResource("1_v2s6r")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=313581721]
+collision_layer = 4
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=874083779]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_vy4v8")
+
+[node name="lifebar" type="Control" parent="." unique_id=1497777420]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+grow_horizontal = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="lifebar" unique_id=1023837100]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -16.0
+offset_top = 14.0
+offset_right = 16.0
+offset_bottom = 17.0
+grow_horizontal = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_vy4v8")
+theme_override_styles/fill = SubResource("StyleBoxFlat_wly3r")
+show_percentage = false

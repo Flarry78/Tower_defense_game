@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://dcptof8kwt8pr"]
+
+[ext_resource type="Texture2D" uid="uid://quvvwpeaxxpk" path="res://assets/boss.png" id="1_2nv2h"]
+[ext_resource type="Script" uid="uid://bsrmtadh46rha" path="res://enemys/boss.gd" id="1_cmvsd"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cmvsd"]
+radius = 15.0
+height = 62.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wdgjm"]
+bg_color = Color(0.95826703, 0, 0.14570671, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a65wo"]
+bg_color = Color(0, 0.75339586, 0.10112322, 1)
+
+[node name="boss" type="Node2D" unique_id=367995323]
+script = ExtResource("1_cmvsd")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=112339976]
+collision_layer = 4
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1939032855]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_cmvsd")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=153673241]
+scale = Vector2(2, 2)
+texture = ExtResource("1_2nv2h")
+
+[node name="lifebar" type="Control" parent="." unique_id=1779108846]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+grow_horizontal = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="lifebar" unique_id=506032525]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -22.0
+offset_top = 19.0
+offset_right = 22.0
+offset_bottom = 24.0
+grow_horizontal = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_wdgjm")
+theme_override_styles/fill = SubResource("StyleBoxFlat_a65wo")
+show_percentage = false

@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bksan0wcuxgyg"]
+
+[ext_resource type="Texture2D" uid="uid://b3y22ffdowtkw" path="res://assets/spritze.png" id="1_jyy06"]
+[ext_resource type="Script" uid="uid://71eg4i36ykpi" path="res://tower/basetower.gd" id="1_uw3js"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wmmt5"]
+radius = 106.01887
+
+[node name="basetower" type="Node2D" unique_id=622519103]
+script = ExtResource("1_uw3js")
+
+[node name="bild" type="Sprite2D" parent="." unique_id=991698363]
+texture = ExtResource("1_jyy06")
+
+[node name="spotting" type="Area2D" parent="." unique_id=1548543341]
+collision_layer = 2
+collision_mask = 4
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spotting" unique_id=524737346]
+shape = SubResource("CircleShape2D_wmmt5")
+
+[node name="reload" type="Timer" parent="." unique_id=222990588]
+
+[connection signal="area_entered" from="spotting" to="." method="_on_spotting_area_entered"]
+[connection signal="area_exited" from="spotting" to="." method="_on_spotting_area_exited"]
+[connection signal="timeout" from="reload" to="." method="_on_reload_timeout"]

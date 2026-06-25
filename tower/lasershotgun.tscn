@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://b7v0ov14hkias"]
+
+[ext_resource type="Texture2D" uid="uid://d5paefw4abke" path="res://assets/lasershotgun.png" id="1_6uwec"]
+[ext_resource type="Script" uid="uid://buudou376dtma" path="res://tower/lasershotgun.gd" id="1_os7g3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dx6ha"]
+radius = 71.00704
+
+[node name="Lasershotgun" type="Node2D" unique_id=720590033]
+script = ExtResource("1_os7g3")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=846333414]
+texture = ExtResource("1_6uwec")
+
+[node name="spotting" type="Area2D" parent="." unique_id=601641936]
+collision_layer = 2
+collision_mask = 4
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spotting" unique_id=357845860]
+shape = SubResource("CircleShape2D_dx6ha")
+
+[node name="reload" type="Timer" parent="." unique_id=560092723]
+
+[connection signal="area_entered" from="spotting" to="." method="_on_spotting_area_entered"]
+[connection signal="area_exited" from="spotting" to="." method="_on_spotting_area_exited"]
+[connection signal="timeout" from="reload" to="." method="_on_reload_timeout"]

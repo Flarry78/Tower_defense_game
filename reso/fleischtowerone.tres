@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="reskarten" format=3 uid="uid://dwo83uhpd0ert"]
+
+[ext_resource type="Texture2D" uid="uid://bbl0vbrhymk8x" path="res://assets/fleischbild.png" id="1_572c3"]
+[ext_resource type="Script" uid="uid://c35b2tpvsipwr" path="res://kartenres.gd" id="2_3dlh1"]
+
+[resource]
+script = ExtResource("2_3dlh1")
+kartenname = "Fleischtower"
+kartenbild = ExtResource("1_572c3")
+kartentext = "Ein einfacher Fleischtower der einfache Geschosse schießt."
+kartentyp = "Turm"
+toweranzahl = 4
+metadata/_custom_type_script = "uid://c35b2tpvsipwr"

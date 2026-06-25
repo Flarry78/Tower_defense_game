@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="reskarten" format=3 uid="uid://250qgm1xxhse"]
+
+[ext_resource type="Texture2D" uid="uid://dfovnnn66b0sh" path="res://assets/spritzebild.png" id="1_21qtj"]
+[ext_resource type="Script" uid="uid://c35b2tpvsipwr" path="res://kartenres.gd" id="2_f27rf"]
+
+[resource]
+script = ExtResource("2_f27rf")
+kartenname = "Basetower"
+kartenbild = ExtResource("1_21qtj")
+kartentext = "Einfacher Tower der Laserkugeln schießt."
+kartentyp = "Turm"
+toweranzahl = 4
+metadata/_custom_type_script = "uid://c35b2tpvsipwr"

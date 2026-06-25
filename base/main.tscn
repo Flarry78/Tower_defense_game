@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://bvoj8bfu4wncl"]
+
+[ext_resource type="Script" uid="uid://4rxsfo0164qk" path="res://base/main.gd" id="1_wbdts"]
+[ext_resource type="PackedScene" uid="uid://ck0r4nlwbfx46" path="res://interface/hud.tscn" id="2_f47da"]
+
+[node name="main" type="Node2D" unique_id=923702496]
+script = ExtResource("1_wbdts")
+
+[node name="hud" parent="." unique_id=943334640 instance=ExtResource("2_f47da")]
+
+[node name="level" type="Node2D" parent="." unique_id=1384779173]
+
+[node name="fps" type="Label" parent="." unique_id=672240224]
+z_index = 1
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="cpu" type="Label" parent="." unique_id=1153745141]
+z_index = 1
+offset_top = 46.0
+offset_right = 40.0
+offset_bottom = 69.0
+
+[node name="ram" type="Label" parent="." unique_id=1454574857]
+z_index = 1
+offset_top = 69.0
+offset_right = 40.0
+offset_bottom = 92.0
+
+[node name="nodes" type="Label" parent="." unique_id=1578416672]
+z_index = 1
+offset_top = 23.0
+offset_right = 40.0
+offset_bottom = 46.0
+
+[node name="turmbauplatz" type="Node2D" parent="." unique_id=575531275]
+
+[node name="ghost" type="Node2D" parent="." unique_id=1519642803]
+
+[node name="counter" type="Label" parent="." unique_id=1140713613]
+offset_left = 236.0
+offset_top = 1.0
+offset_right = 276.0
+offset_bottom = 24.0
+
+[node name="spawn" type="Timer" parent="." unique_id=1345844585]
+
+[node name="enemys" type="Node2D" parent="." unique_id=489968042]
+
+[node name="kiste" type="Node2D" parent="." unique_id=438158273]
+
+[connection signal="timeout" from="spawn" to="." method="_on_spawn_timeout"]

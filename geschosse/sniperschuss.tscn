@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://tgiicsoces2v"]
+
+[ext_resource type="Texture2D" uid="uid://cjyas77nqg65k" path="res://assets/sniperschuss.png" id="1_is2yg"]
+[ext_resource type="Script" uid="uid://82i4i082c71a" path="res://geschosse/sniperschuss.gd" id="1_ryv2n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ryv2n"]
+size = Vector2(16, 2)
+
+[node name="sniperschuss" type="Area2D" unique_id=1144863448]
+collision_layer = 8
+collision_mask = 4
+monitorable = false
+script = ExtResource("1_ryv2n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1335664650]
+shape = SubResource("RectangleShape2D_ryv2n")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1944647440]
+texture = ExtResource("1_is2yg")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1993228918]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

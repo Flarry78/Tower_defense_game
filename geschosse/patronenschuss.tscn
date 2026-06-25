@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://uy50luo6yyxm"]
+
+[ext_resource type="Texture2D" uid="uid://c80tjckklbmd4" path="res://assets/kreuz.png" id="1_0dxjv"]
+[ext_resource type="Script" uid="uid://bbixxd8317j6a" path="res://geschosse/patronenschuss.gd" id="1_2vac1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2vac1"]
+radius = 11.0
+
+[node name="patronenschuss" type="Area2D" unique_id=1511105208]
+collision_layer = 16
+collision_mask = 4
+monitorable = false
+script = ExtResource("1_2vac1")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=338390098]
+texture = ExtResource("1_0dxjv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=896969997]
+shape = SubResource("CircleShape2D_2vac1")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

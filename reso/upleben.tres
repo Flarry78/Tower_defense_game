@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="reskarten" format=3 uid="uid://bqj7vq5pxcr31"]
+
+[ext_resource type="Texture2D" uid="uid://c0yde2vdbwy3t" path="res://assets/lebenplus.png" id="1_dat5t"]
+[ext_resource type="Script" uid="uid://c35b2tpvsipwr" path="res://kartenres.gd" id="2_pf0lu"]
+
+[resource]
+script = ExtResource("2_pf0lu")
+kartenname = "lebenplus"
+kartenbild = ExtResource("1_dat5t")
+kartentext = "Erhöht deine Leben um X Wert."
+kartentyp = "Upgrade"
+metadata/_custom_type_script = "uid://c35b2tpvsipwr"

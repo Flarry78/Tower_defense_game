@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://oqjot3bmlnwx"]
+
+[ext_resource type="Script" uid="uid://j3rvc5itfi3q" path="res://tower/fleischtower.gd" id="1_qvkss"]
+[ext_resource type="Texture2D" uid="uid://cxe8wi4w84s44" path="res://assets/fleischone.png" id="2_pdn27"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pdn27"]
+radius = 127.09839
+
+[node name="fleischtower" type="Node2D" unique_id=1206691825]
+script = ExtResource("1_qvkss")
+
+[node name="bild" type="Sprite2D" parent="." unique_id=1635085841]
+texture = ExtResource("2_pdn27")
+
+[node name="spotting" type="Area2D" parent="." unique_id=617717783]
+collision_layer = 2
+collision_mask = 4
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spotting" unique_id=604352768]
+shape = SubResource("CircleShape2D_pdn27")
+
+[node name="reload" type="Timer" parent="." unique_id=1808685235]
+
+[connection signal="area_entered" from="spotting" to="." method="_on_spotting_area_entered"]
+[connection signal="area_exited" from="spotting" to="." method="_on_spotting_area_exited"]
+[connection signal="timeout" from="reload" to="." method="_on_reload_timeout"]
