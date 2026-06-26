@@ -1,9 +1,11 @@
 
+# Roguelike Tower Defense Game.
+
+Neues Projekt gestartet: name weiß ich noch net
+
+
 ## 2026-04-03
 
-- Neues Projekt gestartet: name weiß ich noch net
-- Roguelike Tower Defense Game mit dem Settings dass das Spiel im Menschlichen Körper stattfindet und die Türme sowas wie Spritzen oder Röntgengeräte sind.
-- Gegner sind dann Viren oder Krebszellen.
 - Angefangen ein Autoload Script zu erstellen.
 - Die ersten "Test" Tiles erstellt.
 - 4 Maps erstellt mit Pfaden und Bauzonen.
