@@ -2,7 +2,10 @@ extends Node
 class_name mainbase
 
 
-### tower stacken jetzt, jetzt abziehen beim bauen und ability slot fixen
+### ability slot fixen
+
+### tower wieder abbauen und ins inventar
+### inventar maybe fixen das alles nachrutscht
 
 ### wenn tower im inventar genommen werden mit linkslick und dann ein andere tower angegkliuckt wird,
 ### dann ist der ghosttower noch der alte aber es wird der 2te gewählte tower geplaced
@@ -55,6 +58,8 @@ signal bauplanturm(baudata)
 ### Anzeigen
 @warning_ignore("unused_signal")
 signal updatehud
+@warning_ignore("unused_signal")
+signal updateinventar
 
 
 @warning_ignore("unused_signal")
@@ -197,19 +202,23 @@ var allupgrades: Dictionary = {
 var basictower: Dictionary = {
 	"Basetower": {"schaden" : 50,"feuerrate" : 1,"maxrange" : 200, "respfad" : load("res://reso/basetower.tres"),
 	"textfeld" : "Standardtower mit Lasergeschossen",
-	"pfad" : load("res://tower/basetower.tscn")},
+	"pfad" : load("res://tower/basetower.tscn"),
+	"gebaut" : 0},
 	
 	"Fleischtower": {"schaden" : 20,"feuerrate" : 0.6,"maxrange" : 200, "respfad" : load("res://reso/fleischtowerone.tres"),
 	"textfeld" : "Schneller Turm mit Piercing Geschossen",
-	"pfad" : load("res://tower/fleischtower.tscn")},
+	"pfad" : load("res://tower/fleischtower.tscn"),
+	"gebaut" : 0},
 	
 	"Lasershotgun": {"schaden" : 40,"feuerrate" : 0.8,"maxrange" : 100, "respfad" : load("res://reso/shotguntower.tres"),
 	"textfeld" : "Schiest in 4 Richtungen einen Laser mit weniger Reichweite",
-	"pfad" : load("res://tower/lasershotgun.tscn")},
+	"pfad" : load("res://tower/lasershotgun.tscn"),
+	"gebaut" : 0},
 	
 	"Sniperauge": {"schaden" : 100,"feuerrate" : 2,"maxrange" : 500, "respfad" : load("res://reso/sniperaugeres.tres"),
 	"textfeld" : "Sniperturm mit hoher Reichweite und Lasergeschosse",
-	"pfad" : load("res://tower/sniperauge.tscn")}
+	"pfad" : load("res://tower/sniperauge.tscn"),
+	"gebaut" : 0}
 	
 	
 	

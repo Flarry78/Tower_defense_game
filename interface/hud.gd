@@ -35,6 +35,7 @@ var spezialwahlturm : bool = false
 
 var inventar : Array = []
 
+
 func _ready() -> void:
 	
 	anzeigeupdaten()
@@ -345,14 +346,6 @@ func _on_restartthismap_pressed() -> void:
 	
 	pass
 
-func updateinv() -> void:
-	
-	for slot in inventar:
-		if slot.holdres != null:
-			slot.texture_normal = slot.holdres.kartenbild
-			slot.aktuell()
-	
-	pass
 
 
 func _on_buttonone_pressed() -> void:
@@ -363,13 +356,13 @@ func _on_buttonone_pressed() -> void:
 		for slot in inventar:
 			if slot.holdres == null:
 				slot.holdres = meins.holdres
-				slot.slotgrose += meins.holdres.toweranzahl
-				updateinv()
+				Base.basictower[slot.holdres.kartenname].gebaut += meins.holdres.toweranzahl
+				Base.emit_signal("updateinventar")
 				break
 			elif slot.holdres != null:
 				if slot.holdres.kartenname == meins.holdres.kartenname:
-					slot.slotgrose += meins.holdres.toweranzahl
-					slot.aktuell()
+					Base.basictower[slot.holdres.kartenname].gebaut += meins.holdres.toweranzahl
+					Base.emit_signal("updateinventar")
 					print("is gleich")
 					break
 	
@@ -401,13 +394,13 @@ func _on_buttontwo_pressed() -> void:
 		for slot in inventar:
 			if slot.holdres == null:
 				slot.holdres = meins.holdres
-				slot.slotgrose += meins.holdres.toweranzahl
-				updateinv()
+				Base.basictower[slot.holdres.kartenname].gebaut += meins.holdres.toweranzahl
+				Base.emit_signal("updateinventar")
 				break
 			elif slot.holdres != null:
 				if slot.holdres.kartenname == meins.holdres.kartenname:
-					slot.slotgrose += meins.holdres.toweranzahl
-					slot.aktuell()
+					Base.basictower[slot.holdres.kartenname].gebaut += meins.holdres.toweranzahl
+					Base.emit_signal("updateinventar")
 					print("is gleich")
 					break
 	
@@ -441,13 +434,13 @@ func _on_buttonthree_pressed() -> void:
 		for slot in inventar:
 			if slot.holdres == null:
 				slot.holdres = meins.holdres
-				slot.slotgrose += meins.holdres.toweranzahl
-				updateinv()
+				Base.basictower[slot.holdres.kartenname].gebaut += meins.holdres.toweranzahl
+				##
 				break
 			elif slot.holdres != null:
 				if slot.holdres.kartenname == meins.holdres.kartenname:
-					slot.slotgrose += meins.holdres.toweranzahl
-					slot.aktuell()
+					Base.basictower[slot.holdres.kartenname].gebaut += meins.holdres.toweranzahl
+					##
 					print("is gleich")
 					break
 	
@@ -463,6 +456,8 @@ func _on_buttonthree_pressed() -> void:
 			spezialwahlupgrade = true
 			kartenchoose()
 			return
+	
+	Base.emit_signal("updateinventar")
 	
 	karten.visible = false
 	Base.kartenauswahl = false
@@ -481,13 +476,13 @@ func _on_buttonfour_pressed() -> void:
 		for slot in inventar:
 			if slot.holdres == null:
 				slot.holdres = meins.holdres
-				slot.slotgrose += meins.holdres.toweranzahl
-				updateinv()
+				Base.basictower[slot.holdres.kartenname].gebaut += meins.holdres.toweranzahl
+				Base.emit_signal("updateinventar")
 				break
 			elif slot.holdres != null:
 				if slot.holdres.kartenname == meins.holdres.kartenname:
-					slot.slotgrose += meins.holdres.toweranzahl
-					slot.aktuell()
+					Base.basictower[slot.holdres.kartenname].gebaut += meins.holdres.toweranzahl
+					Base.emit_signal("updateinventar")
 					print("is gleich")
 					break
 	

@@ -13,7 +13,8 @@ var baunummer : int = 2
 
 @onready var enemys: Node2D = $enemys
 
-var turma
+var turma : PackedScene
+var turmname : String
 
 
 @onready var ram: Label = $ram
@@ -28,7 +29,7 @@ var zahl : int = 0
 var willbauen : bool = false
 var darfbauen : bool = true
 
-var realtower
+var realtower : Node2D
 var bauegerade : bool = false
 
 func _ready() -> void:
@@ -129,7 +130,7 @@ func ghosting() -> void:
 
 func bauenbutton(dataturm) -> void:
 	
-	var turmname = dataturm.kartenname
+	turmname = dataturm.kartenname
 	
 	tooktower(turmname)
 	
@@ -142,11 +143,7 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("bauen"):
 		if Base.wellelauft == true or Base.kartenauswahl == true:
 			return
-		if bauegerade == false:
-			print("huuuaaa")
-			#tooktower()
-			#bauturm()
-		elif bauegerade == true and darfbauen == true:
+		if bauegerade == true and darfbauen == true:
 			finalplacing()
 	
 	if event.is_action_pressed("accept"):
@@ -158,7 +155,6 @@ func _input(event: InputEvent) -> void:
 
 func tooktower(dername):
 	
-	#var choosentower : String = Base.towerpool.pick_random()
 	var ladechoosen = Base.basictower[dername].pfad
 	turma = ladechoosen
 	
@@ -271,7 +267,9 @@ func finalplacing() -> void:
 	finalturm.global_position = realtower.global_position
 	Base.alleaktiventower.append(finalturm)
 	zahl += 1
-	
+	Base.basictower[turmname].gebaut -= 1
+	print(Base.basictower[turmname].gebaut)
+	Base.emit_signal("updateinventar")
 	realtower.queue_free()
 	
 	pass

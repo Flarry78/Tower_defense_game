@@ -136,4 +136,12 @@ Neues Projekt gestartet: name weiß ich noch net
 
 ## 2026-06-18
 
-- die karen gleichen jetzt mit de slot ab ob der gleiche tower schon im inventar ist und wenn ja wird nun die anzahl erhöht.
+- die karten gleichen jetzt mit dem slot ab ob der gleiche tower schon im inventar ist und wenn ja wird nun die anzahl erhöht.
+
+
+## 2026-06-28
+
+- das Tower Inventar bearbeitet.
+- Die slots im inventar überarbeitet und die slotgröße für die tower entfernt.
+- Die Toweranzahl wird jetzt über das Singleton Dictionary geregelt.
+- Das inventar wird jetzt über Signale geupdatet wenn ein Tower gebaut wurde oder die Toweranzhal 0 erreicht hat.
