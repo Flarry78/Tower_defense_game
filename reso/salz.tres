@@ -9,4 +9,5 @@ kartenname = "Kochsalz"
 kartenbild = ExtResource("1_w1lik")
 kartentext = "Kochsalzlösung die Gegner im Bereich slowt und ihnen Schaden zufügt."
 kartentyp = "Ability"
+abilityanzahl = 2
 metadata/_custom_type_script = "uid://c35b2tpvsipwr"

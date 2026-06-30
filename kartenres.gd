@@ -11,3 +11,5 @@ class_name reskarten
 @export var kartentyp : String = ""
 
 @export var toweranzahl : int
+
+@export var abilityanzahl : int

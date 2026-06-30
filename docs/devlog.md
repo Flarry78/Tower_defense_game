@@ -145,3 +145,10 @@ Neues Projekt gestartet: name weiß ich noch net
 - Die slots im inventar überarbeitet und die slotgröße für die tower entfernt.
 - Die Toweranzahl wird jetzt über das Singleton Dictionary geregelt.
 - Das inventar wird jetzt über Signale geupdatet wenn ein Tower gebaut wurde oder die Toweranzhal 0 erreicht hat.
+
+
+## 2026-06-30
+
+- Ability Resource angepasst.
+- Aufladungen für die Abilitys ins Singleton Dictionary gepackt.
+- Wenn die Ability gepickt wird, kommt sie in den ersten leeren Slot.

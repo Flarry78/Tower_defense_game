@@ -9,4 +9,5 @@ kartenname = "Artillery"
 kartenbild = ExtResource("1_o3xjm")
 kartentext = "Artilleryfeuer das in einem Bereich zufällig schaden austeilt."
 kartentyp = "Ability"
+abilityanzahl = 2
 metadata/_custom_type_script = "uid://c35b2tpvsipwr"

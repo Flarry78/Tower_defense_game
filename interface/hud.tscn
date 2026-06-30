@@ -495,7 +495,7 @@ texture_normal = ExtResource("2_j5tbm")
 stretch_mode = 0
 script = ExtResource("8_yj6nv")
 
-[node name="Label" type="Label" parent="hudbar/abilityslots/HBoxContainer/abilityone" unique_id=645926539]
+[node name="qbutton" type="Label" parent="hudbar/abilityslots/HBoxContainer/abilityone" unique_id=645926539]
 layout_mode = 1
 offset_right = 7.0
 offset_bottom = 12.0
@@ -504,6 +504,23 @@ theme_override_constants/outline_size = 4
 theme_override_font_sizes/font_size = 8
 text = "Q"
 
+[node name="qcharge" type="Label" parent="hudbar/abilityslots/HBoxContainer/abilityone" unique_id=1534617142]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = -12.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 8
+text = "0"
+horizontal_alignment = 2
+vertical_alignment = 2
+
 [node name="abilitytwo" type="TextureButton" parent="hudbar/abilityslots/HBoxContainer" unique_id=2100462843]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -511,7 +528,7 @@ texture_normal = ExtResource("2_j5tbm")
 stretch_mode = 0
 script = ExtResource("9_wt8rj")
 
-[node name="Label" type="Label" parent="hudbar/abilityslots/HBoxContainer/abilitytwo" unique_id=1595677830]
+[node name="ebutton" type="Label" parent="hudbar/abilityslots/HBoxContainer/abilitytwo" unique_id=1595677830]
 layout_mode = 1
 offset_right = 40.0
 offset_bottom = 23.0
@@ -519,6 +536,23 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_font_sizes/font_size = 8
 text = "E"
+
+[node name="echarge" type="Label" parent="hudbar/abilityslots/HBoxContainer/abilitytwo" unique_id=1441130136]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = -12.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 8
+text = "0"
+horizontal_alignment = 2
+vertical_alignment = 2
 
 [node name="kartenbutton" type="Button" parent="hudbar" unique_id=1387677801]
 layout_mode = 1

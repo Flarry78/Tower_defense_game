@@ -9,4 +9,5 @@ kartenname = "Desinfektionspray"
 kartenbild = ExtResource("1_rmi45")
 kartentext = "Desinfektionsspray das eine ausbreitende Wolke erzeugt die Gegnern schaden zufügt."
 kartentyp = "Ability"
+abilityanzahl = 2
 metadata/_custom_type_script = "uid://c35b2tpvsipwr"

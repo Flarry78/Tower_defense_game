@@ -2,7 +2,7 @@ extends Node
 class_name mainbase
 
 
-### ability slot fixen
+### ability slot weiter machen, drücken können, aufladungen maybe stacken
 
 ### tower wieder abbauen und ins inventar
 ### inventar maybe fixen das alles nachrutscht
@@ -227,13 +227,14 @@ var basictower: Dictionary = {
 
 var ability : Dictionary = {
 	"Artillery": {"schaden" : 70,"dauer" : 7, "respfad" : load("res://reso/atillery.tres"),
-	"textfeld" : "Artilleryfeuer mit zufälligen Einschlägen."},
+	"textfeld" : "Artilleryfeuer mit zufälligen Einschlägen.", "aufladung" : 0},
 	
 	"Desinfektionspray": {"schaden" : 20,"dauer" : 10, "respfad" : load("res://reso/desinfektionspray.tres"),
-	"textfeld" : "Eine Gaswolke die kontinuierlich Schaden verursacht."},
+	"textfeld" : "Eine Gaswolke die kontinuierlich Schaden verursacht.", "aufladung" : 0},
 	
 	"Kochsalz": {"schaden" : 10,"dauer" : 15, "respfad" : load("res://reso/salz.tres"),
-	"textfeld" : "Eine Kochsalzlösung die Gegner kontinuierlich Schaden zufügt und sie slowt."},
+	"textfeld" : "Eine Kochsalzlösung die Gegner kontinuierlich Schaden zufügt und sie slowt.",
+	"aufladung" : 0},
 	
 	
 	

@@ -19,6 +19,8 @@ extends CanvasLayer
 @onready var abilitytwo: TextureButton = $hudbar/abilityslots/HBoxContainer/abilitytwo
 
 
+
+
 @onready var konebild: TextureRect = $gamefenster/karten/kartcontainer/karteone/konebild
 @onready var konetext: RichTextLabel = $gamefenster/karten/kartcontainer/karteone/konetext
 @onready var ktwobild: TextureRect = $gamefenster/karten/kartcontainer/karteone2/ktwobild
@@ -357,18 +359,21 @@ func _on_buttonone_pressed() -> void:
 			if slot.holdres == null:
 				slot.holdres = meins.holdres
 				Base.basictower[slot.holdres.kartenname].gebaut += meins.holdres.toweranzahl
-				Base.emit_signal("updateinventar")
 				break
 			elif slot.holdres != null:
 				if slot.holdres.kartenname == meins.holdres.kartenname:
 					Base.basictower[slot.holdres.kartenname].gebaut += meins.holdres.toweranzahl
-					Base.emit_signal("updateinventar")
 					print("is gleich")
 					break
 	
 	if meins.holdres.kartentyp == "Ability":
-		abilityone.holdres = meins.holdres
-		abilityone.texture_normal = meins.holdres.kartenbild
+		if abilityone.holdres == null:
+			abilityone.holdres = meins.holdres
+			Base.ability[meins.holdres.kartenname].aufladung += meins.holdres.abilityanzahl
+		elif abilitytwo.holdres == null:
+			abilitytwo.holdres = meins.holdres
+			Base.ability[meins.holdres.kartenname].aufladung += meins.holdres.abilityanzahl
+	
 	
 	if meins.holdres.kartentyp == "Upgrade":
 		print("is ein upgrade")
@@ -378,6 +383,8 @@ func _on_buttonone_pressed() -> void:
 			spezialwahlturm = true
 			kartenchoose()
 			return
+	
+	Base.emit_signal("updateinventar")
 	
 	karten.visible = false
 	Base.kartenauswahl = false
@@ -395,18 +402,21 @@ func _on_buttontwo_pressed() -> void:
 			if slot.holdres == null:
 				slot.holdres = meins.holdres
 				Base.basictower[slot.holdres.kartenname].gebaut += meins.holdres.toweranzahl
-				Base.emit_signal("updateinventar")
 				break
 			elif slot.holdres != null:
 				if slot.holdres.kartenname == meins.holdres.kartenname:
 					Base.basictower[slot.holdres.kartenname].gebaut += meins.holdres.toweranzahl
-					Base.emit_signal("updateinventar")
 					print("is gleich")
 					break
 	
 	if meins.holdres.kartentyp == "Ability":
-		abilityone.holdres = meins.holdres
-		abilityone.texture_normal = meins.holdres.kartenbild
+		if abilityone.holdres == null:
+			abilityone.holdres = meins.holdres
+			Base.ability[meins.holdres.kartenname].aufladung += meins.holdres.abilityanzahl
+		elif abilitytwo.holdres == null:
+			abilitytwo.holdres = meins.holdres
+			Base.ability[meins.holdres.kartenname].aufladung += meins.holdres.abilityanzahl
+	
 	
 	if meins.holdres.kartentyp == "Upgrade":
 		print("is ein upgrade")
@@ -416,6 +426,9 @@ func _on_buttontwo_pressed() -> void:
 			spezialwahlupgrade = true
 			kartenchoose()
 			return
+	
+	
+	Base.emit_signal("updateinventar")
 	
 	karten.visible = false
 	Base.kartenauswahl = false
@@ -435,12 +448,10 @@ func _on_buttonthree_pressed() -> void:
 			if slot.holdres == null:
 				slot.holdres = meins.holdres
 				Base.basictower[slot.holdres.kartenname].gebaut += meins.holdres.toweranzahl
-				##
 				break
 			elif slot.holdres != null:
 				if slot.holdres.kartenname == meins.holdres.kartenname:
 					Base.basictower[slot.holdres.kartenname].gebaut += meins.holdres.toweranzahl
-					##
 					print("is gleich")
 					break
 	
@@ -477,12 +488,10 @@ func _on_buttonfour_pressed() -> void:
 			if slot.holdres == null:
 				slot.holdres = meins.holdres
 				Base.basictower[slot.holdres.kartenname].gebaut += meins.holdres.toweranzahl
-				Base.emit_signal("updateinventar")
 				break
 			elif slot.holdres != null:
 				if slot.holdres.kartenname == meins.holdres.kartenname:
 					Base.basictower[slot.holdres.kartenname].gebaut += meins.holdres.toweranzahl
-					Base.emit_signal("updateinventar")
 					print("is gleich")
 					break
 	
@@ -500,10 +509,13 @@ func _on_buttonfour_pressed() -> void:
 			kartenchoose()
 			return
 	
+	Base.emit_signal("updateinventar")
 	
 	karten.visible = false
 	Base.kartenauswahl = false
 	kartenbutton.visible = false
+	
+	
 	pass
 
 
