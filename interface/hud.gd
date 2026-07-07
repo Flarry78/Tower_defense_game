@@ -19,8 +19,6 @@ extends CanvasLayer
 @onready var abilitytwo: TextureButton = $hudbar/abilityslots/HBoxContainer/abilitytwo
 
 
-
-
 @onready var konebild: TextureRect = $gamefenster/karten/kartcontainer/karteone/konebild
 @onready var konetext: RichTextLabel = $gamefenster/karten/kartcontainer/karteone/konetext
 @onready var ktwobild: TextureRect = $gamefenster/karten/kartcontainer/karteone2/ktwobild
@@ -262,6 +260,7 @@ func resume_game():
 	get_tree().paused = false
 	escapemenu.visible = false
 	
+	
 	pass
 
 
@@ -287,6 +286,7 @@ func _on_startrundebutton_pressed() -> void:
 	
 	Base.emit_signal("startewelle")
 	
+	
 	pass
 
 
@@ -303,12 +303,14 @@ func _on_newlevel_pressed() -> void:
 	Base.fullreset()
 	get_tree().reload_current_scene()
 	
+	
 	pass
 
 
 func _on_exitbutton_pressed() -> void:
 	
 	get_tree().quit()
+	
 	
 	pass
 
@@ -319,12 +321,14 @@ func _on_restartnew_pressed() -> void:
 	Base.fullreset()
 	get_tree().reload_current_scene()
 	
+	
 	pass
 
 
 func _on_exit_pressed() -> void:
 	
 	get_tree().quit()
+	
 	
 	pass
 
@@ -336,6 +340,7 @@ func _on_restartcurrent_pressed() -> void:
 	Base.fullreset()
 	get_tree().reload_current_scene()
 	
+	
 	pass
 
 
@@ -345,6 +350,7 @@ func _on_restartthismap_pressed() -> void:
 	toggle_pause()
 	Base.fullreset()
 	get_tree().reload_current_scene()
+	
 	
 	pass
 
@@ -389,6 +395,7 @@ func _on_buttonone_pressed() -> void:
 	karten.visible = false
 	Base.kartenauswahl = false
 	kartenbutton.visible = false
+	
 	
 	pass
 
@@ -435,7 +442,6 @@ func _on_buttontwo_pressed() -> void:
 	kartenbutton.visible = false
 	
 	
-	
 	pass
 
 
@@ -473,7 +479,6 @@ func _on_buttonthree_pressed() -> void:
 	karten.visible = false
 	Base.kartenauswahl = false
 	kartenbutton.visible = false
-	
 	
 	
 	pass
@@ -522,5 +527,6 @@ func _on_buttonfour_pressed() -> void:
 func _on_kartenbutton_pressed() -> void:
 	
 	karten.visible = !karten.visible
+	
 	
 	pass

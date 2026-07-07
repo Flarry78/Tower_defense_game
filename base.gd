@@ -2,7 +2,9 @@ extends Node
 class_name mainbase
 
 
-### ability slot weiter machen, drücken können, aufladungen maybe stacken
+### ability aufladungen nach ende der runde wieder auffüllen
+### wenn null dann blockieren
+### maybe wenn man mit der maus die fähigkeit benutz kann man sie ziehen. oder button blockieren
 
 ### tower wieder abbauen und ins inventar
 ### inventar maybe fixen das alles nachrutscht
@@ -27,7 +29,7 @@ class_name mainbase
 
 
 ### Alle globalen stats
-var leben : int = 30
+var leben : int = 3000
 var runde : int = 0
 var finalrunde : int = 16
 var punktzahl : int = 0
@@ -53,6 +55,12 @@ var besetztefelder : Dictionary = {}
 
 @warning_ignore("unused_signal")
 signal bauplanturm(baudata)
+
+## abilitys
+@warning_ignore("unused_signal")
+signal qbutton
+@warning_ignore("unused_signal")
+signal ebutton
 
 
 ### Anzeigen
@@ -227,14 +235,16 @@ var basictower: Dictionary = {
 
 var ability : Dictionary = {
 	"Artillery": {"schaden" : 70,"dauer" : 7, "respfad" : load("res://reso/atillery.tres"),
-	"textfeld" : "Artilleryfeuer mit zufälligen Einschlägen.", "aufladung" : 0},
+	"textfeld" : "Artilleryfeuer mit zufälligen Einschlägen.", "aufladung" : 0,
+	"pfad" : load("res://ability/artillery.tscn")},
 	
 	"Desinfektionspray": {"schaden" : 20,"dauer" : 10, "respfad" : load("res://reso/desinfektionspray.tres"),
-	"textfeld" : "Eine Gaswolke die kontinuierlich Schaden verursacht.", "aufladung" : 0},
+	"textfeld" : "Eine Gaswolke die kontinuierlich Schaden verursacht.", "aufladung" : 0,
+	"pfad" : load("res://ability/desinfektionsspray.tscn")},
 	
 	"Kochsalz": {"schaden" : 10,"dauer" : 15, "respfad" : load("res://reso/salz.tres"),
 	"textfeld" : "Eine Kochsalzlösung die Gegner kontinuierlich Schaden zufügt und sie slowt.",
-	"aufladung" : 0},
+	"aufladung" : 0, "pfad" : load("res://ability/kochsalz.tscn")},
 	
 	
 	

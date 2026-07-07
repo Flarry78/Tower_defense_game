@@ -152,3 +152,10 @@ Neues Projekt gestartet: name weiß ich noch net
 - Ability Resource angepasst.
 - Aufladungen für die Abilitys ins Singleton Dictionary gepackt.
 - Wenn die Ability gepickt wird, kommt sie in den ersten leeren Slot.
+
+
+## 2026-07-07
+
+- inputs vom main script über signale verbunden mit den buttons für die abilitys.
+- die scenen der abilitys ins dictionary eingefügt.
+- beim benutzen der fähigkeit wird nun eine aufladung abgezogen.

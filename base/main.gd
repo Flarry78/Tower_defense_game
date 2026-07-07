@@ -137,7 +137,6 @@ func bauenbutton(dataturm) -> void:
 	pass
 
 
-
 func _input(event: InputEvent) -> void:
 	
 	if event.is_action_pressed("bauen"):
@@ -146,9 +145,22 @@ func _input(event: InputEvent) -> void:
 		if bauegerade == true and darfbauen == true:
 			finalplacing()
 	
-	if event.is_action_pressed("accept"):
-		ability()
+	
+	if event.is_action_pressed("qability"):
+		if Base.wellelauft == false:
+			return
+		Base.emit_signal("qbutton")
+		
 
+	
+	if event.is_action_pressed("eability"):
+		if Base.wellelauft == false:
+			return
+		Base.emit_signal("ebutton")
+		
+		
+	
+	
 	pass
 
 
@@ -162,16 +174,6 @@ func tooktower(dername):
 	pass
 
 
-var deswolke : PackedScene = load("res://ability/desinfektionsspray.tscn")
-func ability() -> void:
-	
-	var mouse = get_global_mouse_position()
-	var realwolke = deswolke.instantiate()
-	
-	add_child(realwolke)
-	realwolke.global_position = mouse
-	
-	pass
 
 
 var aktivepfade : Array[PathFollow2D] = []
