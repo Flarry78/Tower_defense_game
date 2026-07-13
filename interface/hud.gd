@@ -34,21 +34,55 @@ var spezialwahlupgrade : bool = false
 var spezialwahlturm : bool = false
 
 var inventar : Array = []
-
+var realinventar : Array = []
 
 func _ready() -> void:
 	
 	anzeigeupdaten()
 	Base.updatehud.connect(anzeigeupdaten)
 	Base.zeigekarten.connect(kartenchoose)
+	Base.updateinventar.connect(updatetowerinv)
 	escapemenu.visible = false
 	losescreen.visible = false
 	kartenbutton.visible = false
 	karten.visible = false
-	inventar = towergrid.get_children()
+	createinv()
 	
 	pass
 
+
+func createinv() -> void:
+	
+	inventar = towergrid.get_children()
+	
+	
+	
+	pass
+
+func updatetowerinv() -> void:
+	
+	for slot in inventar:
+		slot.holdres = null
+	
+	
+	for res in realinventar:
+		for slot in inventar:
+			if slot.holdres != null and slot.holdres.kartenname == res.kartenname:
+				break
+			elif slot.holdres == null:
+				slot.holdres = res
+				break
+	
+	
+	
+	for slot in inventar:
+		if slot.holdres != null:
+			slot.texture_normal = slot.holdres.kartenbild
+			slot.anzahl.text = str(Base.basictower[slot.holdres.kartenname].towerbesitz)
+	
+	print(realinventar)
+	
+	pass
 
 
 func kartenchoose() -> void:
@@ -361,16 +395,11 @@ func _on_buttonone_pressed() -> void:
 	var meins = karteone
 	
 	if meins.holdres.kartentyp == "Turm":
-		for slot in inventar:
-			if slot.holdres == null:
-				slot.holdres = meins.holdres
-				Base.basictower[slot.holdres.kartenname].gebaut += meins.holdres.toweranzahl
-				break
-			elif slot.holdres != null:
-				if slot.holdres.kartenname == meins.holdres.kartenname:
-					Base.basictower[slot.holdres.kartenname].gebaut += meins.holdres.toweranzahl
-					print("is gleich")
-					break
+		if meins.holdres in realinventar:
+			Base.basictower[meins.holdres.kartenname].towerbesitz += Base.basictower[meins.holdres.kartenname].toweranzahl
+		else:
+			realinventar.append(meins.holdres)
+			Base.basictower[meins.holdres.kartenname].towerbesitz += Base.basictower[meins.holdres.kartenname].toweranzahl
 	
 	if meins.holdres.kartentyp == "Ability":
 		if abilityone.holdres == null:
@@ -408,13 +437,11 @@ func _on_buttontwo_pressed() -> void:
 		for slot in inventar:
 			if slot.holdres == null:
 				slot.holdres = meins.holdres
-				Base.basictower[slot.holdres.kartenname].gebaut += meins.holdres.toweranzahl
 				break
-			elif slot.holdres != null:
-				if slot.holdres.kartenname == meins.holdres.kartenname:
-					Base.basictower[slot.holdres.kartenname].gebaut += meins.holdres.toweranzahl
-					print("is gleich")
+			elif slot.holdres.kartenname == meins.holdres.kartenname:
+					Base.basictower[slot.holdres.kartenname].towerbesitz += Base.basictower[slot.holdres.kartenname].toweranzahl
 					break
+		
 	
 	if meins.holdres.kartentyp == "Ability":
 		if abilityone.holdres == null:
@@ -453,12 +480,9 @@ func _on_buttonthree_pressed() -> void:
 		for slot in inventar:
 			if slot.holdres == null:
 				slot.holdres = meins.holdres
-				Base.basictower[slot.holdres.kartenname].gebaut += meins.holdres.toweranzahl
 				break
-			elif slot.holdres != null:
-				if slot.holdres.kartenname == meins.holdres.kartenname:
-					Base.basictower[slot.holdres.kartenname].gebaut += meins.holdres.toweranzahl
-					print("is gleich")
+			elif slot.holdres.kartenname == meins.holdres.kartenname:
+					Base.basictower[slot.holdres.kartenname].towerbesitz += Base.basictower[slot.holdres.kartenname].toweranzahl
 					break
 	
 	if meins.holdres.kartentyp == "Ability":
@@ -492,12 +516,9 @@ func _on_buttonfour_pressed() -> void:
 		for slot in inventar:
 			if slot.holdres == null:
 				slot.holdres = meins.holdres
-				Base.basictower[slot.holdres.kartenname].gebaut += meins.holdres.toweranzahl
 				break
-			elif slot.holdres != null:
-				if slot.holdres.kartenname == meins.holdres.kartenname:
-					Base.basictower[slot.holdres.kartenname].gebaut += meins.holdres.toweranzahl
-					print("is gleich")
+			elif slot.holdres.kartenname == meins.holdres.kartenname:
+					Base.basictower[slot.holdres.kartenname].towerbesitz += Base.basictower[slot.holdres.kartenname].toweranzahl
 					break
 	
 	if meins.holdres.kartentyp == "Ability":

@@ -271,9 +271,8 @@ func finalplacing() -> void:
 	finalturm.global_position = realtower.global_position
 	Base.alleaktiventower.append(finalturm)
 	zahl += 1
-	Base.basictower[turmname].gebaut -= 1
-	print(Base.basictower[turmname].gebaut)
-	Base.emit_signal("updateinventar")
+	Base.basictower[turmname].towerbesitz -= 1
+	
 	realtower.queue_free()
 	
 	pass

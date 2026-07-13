@@ -9,5 +9,3 @@ class_name reskarten
 @export var kartentext : String = ""
 
 @export var kartentyp : String = ""
-
-@export var toweranzahl : int

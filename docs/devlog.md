@@ -165,3 +165,10 @@ Neues Projekt gestartet: name weiß ich noch net
 
 - abilitys haben ihre aufladung und geändert das es nicht über resourcen sondern auch über ein dictionary gesteuert wird.
 - blockiert wenn aufladung bei null ist und resettet in jeder neuen runde.
+
+
+## 2026-07-13
+
+- tower inventar bearbeitet.
+- tower anzahl aus der resource entfernt und ins singleton dictionary gepackt.
+- arrays angepasst das dass inventar jetzt immer die ersten slots besetzt und die tower nachrutschen sollten.
