@@ -375,10 +375,10 @@ func _on_buttonone_pressed() -> void:
 	if meins.holdres.kartentyp == "Ability":
 		if abilityone.holdres == null:
 			abilityone.holdres = meins.holdres
-			Base.ability[meins.holdres.kartenname].aufladung += meins.holdres.abilityanzahl
-		elif abilitytwo.holdres == null:
+			abilityone.texture_normal = meins.holdres.kartenbild
+		else: 
 			abilitytwo.holdres = meins.holdres
-			Base.ability[meins.holdres.kartenname].aufladung += meins.holdres.abilityanzahl
+			abilitytwo.texture_normal = meins.holdres.kartenbild
 	
 	
 	if meins.holdres.kartentyp == "Upgrade":
@@ -419,10 +419,10 @@ func _on_buttontwo_pressed() -> void:
 	if meins.holdres.kartentyp == "Ability":
 		if abilityone.holdres == null:
 			abilityone.holdres = meins.holdres
-			Base.ability[meins.holdres.kartenname].aufladung += meins.holdres.abilityanzahl
-		elif abilitytwo.holdres == null:
+			abilityone.texture_normal = meins.holdres.kartenbild
+		else: 
 			abilitytwo.holdres = meins.holdres
-			Base.ability[meins.holdres.kartenname].aufladung += meins.holdres.abilityanzahl
+			abilitytwo.texture_normal = meins.holdres.kartenbild
 	
 	
 	if meins.holdres.kartentyp == "Upgrade":

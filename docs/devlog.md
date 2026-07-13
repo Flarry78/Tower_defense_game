@@ -159,3 +159,9 @@ Neues Projekt gestartet: name weiß ich noch net
 - inputs vom main script über signale verbunden mit den buttons für die abilitys.
 - die scenen der abilitys ins dictionary eingefügt.
 - beim benutzen der fähigkeit wird nun eine aufladung abgezogen.
+
+
+## 20226-07-12
+
+- abilitys haben ihre aufladung und geändert das es nicht über resourcen sondern auch über ein dictionary gesteuert wird.
+- blockiert wenn aufladung bei null ist und resettet in jeder neuen runde.

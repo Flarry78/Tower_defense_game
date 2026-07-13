@@ -2,9 +2,7 @@ extends Node
 class_name mainbase
 
 
-### ability aufladungen nach ende der runde wieder auffüllen
-### wenn null dann blockieren
-### maybe wenn man mit der maus die fähigkeit benutz kann man sie ziehen. oder button blockieren
+### tower mit b bauen können und tower müssen nach links rutschen im inventar 
 
 ### tower wieder abbauen und ins inventar
 ### inventar maybe fixen das alles nachrutscht
@@ -12,17 +10,11 @@ class_name mainbase
 ### wenn tower im inventar genommen werden mit linkslick und dann ein andere tower angegkliuckt wird,
 ### dann ist der ghosttower noch der alte aber es wird der 2te gewählte tower geplaced
 
-### wann welche upgrades kommen und wenn nicht dann keine karten anzeigen
-
 ### karten dem pool hinzufügen wenn zb tower xy genommen wurde
 
 ### tickschaden bei fähigkeiten überdenken oder wie das gemacht wird
 
-### alle stats überarbeiten, fähigkeiten dictionary stats etc
-
 ### bei der endpunktzahl kann man escape drücken und es läuft wieder weuiter
-
-### fähigkeit cooldown oder aufladungen
 
 ### bug wo tower manchma schneller schießen weil neue gegner in die area kommen 
 ### obwohl der reload timer noch laufen sollte
@@ -235,16 +227,16 @@ var basictower: Dictionary = {
 
 var ability : Dictionary = {
 	"Artillery": {"schaden" : 70,"dauer" : 7, "respfad" : load("res://reso/atillery.tres"),
-	"textfeld" : "Artilleryfeuer mit zufälligen Einschlägen.", "aufladung" : 0,
+	"textfeld" : "Artilleryfeuer mit zufälligen Einschlägen.", "aufladung" : 2,
 	"pfad" : load("res://ability/artillery.tscn")},
 	
 	"Desinfektionspray": {"schaden" : 20,"dauer" : 10, "respfad" : load("res://reso/desinfektionspray.tres"),
-	"textfeld" : "Eine Gaswolke die kontinuierlich Schaden verursacht.", "aufladung" : 0,
+	"textfeld" : "Eine Gaswolke die kontinuierlich Schaden verursacht.", "aufladung" : 2,
 	"pfad" : load("res://ability/desinfektionsspray.tscn")},
 	
 	"Kochsalz": {"schaden" : 10,"dauer" : 15, "respfad" : load("res://reso/salz.tres"),
 	"textfeld" : "Eine Kochsalzlösung die Gegner kontinuierlich Schaden zufügt und sie slowt.",
-	"aufladung" : 0, "pfad" : load("res://ability/kochsalz.tscn")},
+	"aufladung" : 2, "pfad" : load("res://ability/kochsalz.tscn")},
 	
 	
 	

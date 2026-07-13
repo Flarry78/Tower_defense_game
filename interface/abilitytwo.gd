@@ -4,19 +4,12 @@ var holdres : Resource = null
 
 @onready var echarge: Label = $echarge
 
+var charges : int = 0
 
 func _ready() -> void:
 	
 	Base.updateinventar.connect(updateability)
 	Base.ebutton.connect(_on_pressed)
-	
-	
-	if holdres == null:
-		return
-	
-	self.texture_normal = holdres.kartenbild
-	echarge.text = Base.ability[holdres.kartenname].aufladung
-	
 	
 	
 	pass
@@ -28,9 +21,8 @@ func updateability() -> void:
 	if holdres == null:
 		return
 	
-	self.texture_normal = holdres.kartenbild
 	echarge.text = str(Base.ability[holdres.kartenname].aufladung)
-	
+	charges = Base.ability[holdres.kartenname].aufladung
 	
 	
 	pass
@@ -40,7 +32,11 @@ func _on_pressed() -> void:
 	
 	if holdres == null:
 		return
+	
 	var spell = Base.ability[holdres.kartenname].pfad
+	
+	if charges <= 0:
+		return
 	
 	var realspell = spell.instantiate()
 	
@@ -48,9 +44,8 @@ func _on_pressed() -> void:
 	
 	realspell.global_position = get_global_mouse_position()
 	
-	Base.ability[holdres.kartenname].aufladung -= 1
-	Base.emit_signal("updateinventar")
-	
+	charges -= 1
+	echarge.text = str(charges)
 	
 	
 	

@@ -144,6 +144,8 @@ func _input(event: InputEvent) -> void:
 			return
 		if bauegerade == true and darfbauen == true:
 			finalplacing()
+		else:
+			print("taketower")
 	
 	
 	if event.is_action_pressed("qability"):
