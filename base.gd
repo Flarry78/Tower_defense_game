@@ -2,12 +2,8 @@ extends Node
 class_name mainbase
 
 
-### tower mit b bauen können und tower müssen nach links rutschen im inventar 
-### tower iventar anzahl verringern beim bauen
-### resource dann entfernen und beim abbauen wieder rein 
 
 ### tower wieder abbauen und ins inventar
-### inventar maybe fixen das alles nachrutscht
 
 ### wenn tower im inventar genommen werden mit linkslick und dann ein andere tower angegkliuckt wird,
 ### dann ist der ghosttower noch der alte aber es wird der 2te gewählte tower geplaced
@@ -49,6 +45,8 @@ var besetztefelder : Dictionary = {}
 
 @warning_ignore("unused_signal")
 signal bauplanturm(baudata)
+@warning_ignore("unused_signal")
+signal justbuild
 
 ## abilitys
 @warning_ignore("unused_signal")

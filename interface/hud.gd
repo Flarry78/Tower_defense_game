@@ -42,6 +42,7 @@ func _ready() -> void:
 	Base.updatehud.connect(anzeigeupdaten)
 	Base.zeigekarten.connect(kartenchoose)
 	Base.updateinventar.connect(updatetowerinv)
+	Base.justbuild.connect(justb)
 	escapemenu.visible = false
 	losescreen.visible = false
 	kartenbutton.visible = false
@@ -54,16 +55,25 @@ func _ready() -> void:
 func createinv() -> void:
 	
 	inventar = towergrid.get_children()
-	
-	
+	updatetowerinv()
 	
 	pass
 
+@onready var kreuz :  Texture = preload("res://assets/kreuz.png")
+
 func updatetowerinv() -> void:
+	
+	var leeren : Array = []
+	
+	for res in realinventar:
+		if Base.basictower[res.kartenname].towerbesitz <= 0:
+			leeren.append(res)
+	
+	for weg in leeren:
+		realinventar.erase(weg)
 	
 	for slot in inventar:
 		slot.holdres = null
-	
 	
 	for res in realinventar:
 		for slot in inventar:
@@ -73,14 +83,13 @@ func updatetowerinv() -> void:
 				slot.holdres = res
 				break
 	
-	
-	
 	for slot in inventar:
 		if slot.holdres != null:
 			slot.texture_normal = slot.holdres.kartenbild
 			slot.anzahl.text = str(Base.basictower[slot.holdres.kartenname].towerbesitz)
-	
-	print(realinventar)
+		else:
+			slot.anzahl.text = " "
+			slot.texture_normal = kreuz
 	
 	pass
 
@@ -269,6 +278,14 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("escape"):
 		toggle_pause()
 	
+	
+	pass
+
+func justb() -> void:
+	
+	if realinventar.is_empty():
+		return
+	Base.emit_signal("bauplanturm", realinventar[0])
 	
 	pass
 

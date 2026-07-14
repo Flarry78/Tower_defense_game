@@ -172,3 +172,10 @@ Neues Projekt gestartet: name weiß ich noch net
 - tower inventar bearbeitet.
 - tower anzahl aus der resource entfernt und ins singleton dictionary gepackt.
 - arrays angepasst das dass inventar jetzt immer die ersten slots besetzt und die tower nachrutschen sollten.
+
+
+## 2026-07-14
+
+- tower hat jetzt korrekte anzahl wie oft gebaut werden kann.
+- bei null verschwindet es aus dem inventar und alles rutscht korrekt nach.
+- man kann jetzt einfach "b" drücken und es wird immer der erste tower im inventar genommen und dann mit nochmal "b" gebaut.

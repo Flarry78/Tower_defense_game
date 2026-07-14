@@ -137,6 +137,7 @@ func bauenbutton(dataturm) -> void:
 	pass
 
 
+
 func _input(event: InputEvent) -> void:
 	
 	if event.is_action_pressed("bauen"):
@@ -145,37 +146,35 @@ func _input(event: InputEvent) -> void:
 		if bauegerade == true and darfbauen == true:
 			finalplacing()
 		else:
-			print("taketower")
+			Base.emit_signal("justbuild")
+			
 	
 	
 	if event.is_action_pressed("qability"):
 		if Base.wellelauft == false:
 			return
 		Base.emit_signal("qbutton")
-		
-
+	
 	
 	if event.is_action_pressed("eability"):
 		if Base.wellelauft == false:
 			return
 		Base.emit_signal("ebutton")
-		
-		
 	
 	
 	pass
 
 
 
-func tooktower(dername):
+func tooktower(dername) -> void:
 	
 	var ladechoosen = Base.basictower[dername].pfad
 	turma = ladechoosen
 	
 	bauturm()
+	
+	
 	pass
-
-
 
 
 var aktivepfade : Array[PathFollow2D] = []
@@ -272,6 +271,7 @@ func finalplacing() -> void:
 	Base.alleaktiventower.append(finalturm)
 	zahl += 1
 	Base.basictower[turmname].towerbesitz -= 1
+	Base.emit_signal("updateinventar")
 	
 	realtower.queue_free()
 	
