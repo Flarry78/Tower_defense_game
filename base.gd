@@ -2,7 +2,7 @@ extends Node
 class_name mainbase
 
 
-
+### karten button adden keinen tower karte 2 oder 3 4 
 ### tower wieder abbauen und ins inventar
 
 ### wenn tower im inventar genommen werden mit linkslick und dann ein andere tower angegkliuckt wird,
